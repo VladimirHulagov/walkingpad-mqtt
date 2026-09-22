@@ -1,0 +1,27 @@
+# Скопировать в ~/.config/walkingpad/config.toml и заполнить.
+# MAC смотрите: walkingpad-mqtt --discover
+
+[ble]
+mac = "57:4C:4E:AA:BB:CC"
+adapter = "hci0"
+
+[pad]
+min_speed_kmh = 0.5
+max_speed_kmh = 6.0
+
+[calories]
+weight_kg = 80.0
+coefficient = 1.03
+
+[mqtt]
+host = "home-assistant.local"
+port = 1883
+tls = false
+# tls = true и port = 8883 для mqtts:// брокеров
+username = ""
+password = ""
+prefix = "walkingpad"
+discovery_prefix = "homeassistant"
+
+[polling]
+interval_s = 1.0

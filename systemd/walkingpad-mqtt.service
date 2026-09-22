@@ -1,0 +1,15 @@
+[Unit]
+Description=WalkingPad A1 Pro -> MQTT bridge
+After=bluetooth.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/CONFIGURATION/FITNESS
+ExecStart=%h/CONFIGURATION/FITNESS/.venv/bin/walkingpad-mqtt
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
